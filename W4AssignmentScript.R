@@ -1,0 +1,41 @@
+## Final Assignment
+## Getting and Cleaning Data Module
+
+setwd("C:/Users/jjack_000/Desktop/Data Science JH course/Getting and Cleaning Data/GitHubRepo/datasciencecoursera")
+
+##read in files from set directory
+
+
+######################################################
+##Change title of script to run_analysis when done
+######################################################
+
+#ActLab <- read.table("./UCI HAR Dataset/activity_labels.txt",header = F)
+
+#SubjectsTest <- read.table("./UCI HAR Dataset/test/subject_test.txt",header = F)
+#XTest <- read.table("./UCI HAR Dataset/test/X_test.txt",header = F)
+#yTest <- read.table("./UCI HAR Dataset/test/y_test.txt",header = F)
+
+#SubjectsTrain <- read.table("./UCI HAR Dataset/train/subject_train.txt",header = F)
+#XTrain <- read.table("./UCI HAR Dataset/train/X_train.txt",header = F)
+#yTrain <- read.table("./UCI HAR Dataset/train/y_train.txt",header = F)
+
+#BodyAccXTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/body_acc_x_test.txt",header = F)
+#BodyAccYTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/body_acc_y_test.txt",header = F)
+#BodyAccZTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/body_acc_z_test.txt",header = F)
+#BodyGyroXTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/body_gyro_x_test.txt",header = F)
+#BodyGyroYTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/body_gyro_y_test.txt",header = F)
+#BodyGyroZTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/body_gyro_z_test.txt",header = F)
+#TotAccXTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/total_acc_x_test.txt",header = F)
+#TotAccYTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/total_acc_y_test.txt",header = F)
+#TotAccZTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/total_acc_z_test.txt",header = F)
+
+BodyAccXTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_acc_x_train.txt",header = F)
+BodyAccYTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_acc_y_train.txt",header = F)
+BodyAccZTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_acc_z_train.txt",header = F)
+BodyGyroXTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_gyro_x_train.txt",header = F)
+BodyGyroYTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_gyro_y_train.txt",header = F)
+BodyGyroZTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_gyro_z_train.txt",header = F)
+TotAccXTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_x_train.txt",header = F)
+TotAccYTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_y_train.txt",header = F)
+TotAccZTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_z_train.txt",header = F)
