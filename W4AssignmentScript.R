@@ -1,8 +1,8 @@
 ## Final Assignment
 ## Getting and Cleaning Data Module
 
-setwd("C:/Users/jjack_000/Desktop/Data Science JH course/Getting and Cleaning Data/GitHubRepo/datasciencecoursera")
-
+#setwd("C:/Users/jjack_000/Desktop/Data Science JH course/Getting and Cleaning Data/GitHubRepo/datasciencecoursera")
+setwd("C:/Users/Sophy/Desktop/JJ Coursera/GitHubRepo")
 ##read in files from set directory
 
 
@@ -27,15 +27,35 @@ setwd("C:/Users/jjack_000/Desktop/Data Science JH course/Getting and Cleaning Da
 #BodyGyroYTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/body_gyro_y_test.txt",header = F)
 #BodyGyroZTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/body_gyro_z_test.txt",header = F)
 #TotAccXTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/total_acc_x_test.txt",header = F)
-#TotAccYTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/total_acc_y_test.txt",header = F)
+#TotAccYTest <- read.table("./UCI HAR Dataset/acttest/Inertial Signals/total_acc_y_test.txt",header = F)
 #TotAccZTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/total_acc_z_test.txt",header = F)
 
-BodyAccXTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_acc_x_train.txt",header = F)
-BodyAccYTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_acc_y_train.txt",header = F)
-BodyAccZTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_acc_z_train.txt",header = F)
-BodyGyroXTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_gyro_x_train.txt",header = F)
-BodyGyroYTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_gyro_y_train.txt",header = F)
-BodyGyroZTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_gyro_z_train.txt",header = F)
-TotAccXTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_x_train.txt",header = F)
-TotAccYTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_y_train.txt",header = F)
-TotAccZTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_z_train.txt",header = F)
+#BodyAccXTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_acc_x_train.txt",header = F)
+#BodyAccYTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_acc_y_train.txt",header = F)
+#BodyAccZTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_acc_z_train.txt",header = F)
+#BodyGyroXTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_gyro_x_train.txt",header = F)
+#BodyGyroYTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_gyro_y_train.txt",header = F)
+#BodyGyroZTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/body_gyro_z_train.txt",header = F)
+#TotAccXTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_x_train.txt",header = F)
+#TotAccYTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_y_train.txt",header = F)
+#TotAccZTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_z_train.txt",header = F)
+
+#FeaturesData <- read.table("./UCI HAR Dataset/features.txt",header = F)
+
+#Trim erroneous column from data read in
+ActivityDescriptions <- ActLab[,2]
+FeaturesDescriptions <- FeaturesData[,2]
+
+#Assign column names to XTest and XTrain, which are the measurement features
+names(XTest) <- FeaturesDescriptions
+names(XTrain) <- FeaturesDescriptions
+
+#Assign column name to yTest and yTrain, which are the activities
+names(yTest) <- "Activity"
+names(yTrain) <- "Activity"
+
+#Assign column name to SubjectTest and SubjectTrain, which are the subjects
+names(SubjectsTest) <- "Subject"
+names(SubjectsTrain) <- "Subject"
+
+####CBind all measurement data and RBind all test and train data
