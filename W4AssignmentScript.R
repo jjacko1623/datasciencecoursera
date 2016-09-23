@@ -10,6 +10,7 @@ setwd("C:/Users/Sophy/Desktop/JJ Coursera/GitHubRepo")
 ##Change title of script to run_analysis when done
 ######################################################
 
+#Read in once, then can comment out when rerunning :)
 #ActLab <- read.table("./UCI HAR Dataset/activity_labels.txt",header = F)
 
 #SubjectsTest <- read.table("./UCI HAR Dataset/test/subject_test.txt",header = F)
@@ -51,11 +52,60 @@ names(XTest) <- FeaturesDescriptions
 names(XTrain) <- FeaturesDescriptions
 
 #Assign column name to yTest and yTrain, which are the activities
-names(yTest) <- "Activity"
-names(yTrain) <- "Activity"
+names(yTest) <- "Activity ID"
+names(yTrain) <- "Activity ID"
 
 #Assign column name to SubjectTest and SubjectTrain, which are the subjects
-names(SubjectsTest) <- "Subject"
-names(SubjectsTrain) <- "Subject"
+names(SubjectsTest) <- "Subject ID"
+names(SubjectsTrain) <- "Subject ID"
 
-####CBind all measurement data and RBind all test and train data
+#Assign column names to XTest and XTrain
+names(XTest) <- FeaturesDescriptions
+names(XTrain) <- FeaturesDescriptions
+
+
+## cbind & rbind as shown in picture
+## rbind subjects, activites and feautre measurements
+## cbind subjects, activites and feautre measurements
+
+#### cbind activites, subjects and feature measurements
+#### rbind headings, train data and test data
+
+rSubject <- rbind(SubjectsTrain,SubjectsTest)
+rActivity <- rbind(yTrain,yTest)
+rFeature <- rbind(XTrain,XTest)
+
+mergedData <- cbind(rSubject,rActivity,rFeature)
+
+
+
+#get column names that have term "mean" & "sd" in them
+meancolindex <- grep("mean",FeaturesDescriptions)
+stdcolindex <- grep("std",FeaturesDescriptions)
+
+#combine column indecies to extract mean & std columns
+#offset by 2 to allow for subjects and activities columns
+filtercolindex <- c(1,2,sort(c(meancolindex,stdcolindex))+2)
+
+#extract mean & std columns from merged data
+filterMergedData <- mergedData[filtercolindex]
+
+
+#change activity numbers to descriptions given in ActivityDescriptions
+#brute force approach as not sure of a better way, plus practise for loop
+
+for (i in 1:nrow(filterMergedData)) {
+  if (filterMergedData[i,2]==1) {
+    filterMergedData[i,2] <- "Walking" #ActivityDescriptions[1]
+  } else if (filterMergedData[i,2]==2) {
+    filterMergedData[i,2] <- "Walking_Upstairs" #ActivityDescriptions[2]
+  } else if (filterMergedData[i,2]==3) {
+    filterMergedData[i,2] <- "Walking_Downstairs" #ActivityDescriptions[3]
+  } else if (filterMergedData[i,2]==4) {
+    filterMergedData[i,2] <- "Sitting" #ActivityDescriptions[4]
+  } else if (filterMergedData[i,2]==5) {
+    filterMergedData[i,2] <- "Standing" #ActivityDescriptions[5]
+  } else {
+    filterMergedData[i,2] <- "Laying" #ActivityDescriptions[6]
+  }
+}
