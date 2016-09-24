@@ -4,7 +4,8 @@
 ### This file describes the variables in the final table produce from Step 5 of the assignment
 
 
-*Subject ID*
+
+**Subject ID**
 
 Record Type
 
@@ -13,7 +14,8 @@ Serial Number
 Identifies which subject was undetaking the experiment
 
 
-*Activity Descriptions*
+
+**Activity Descriptions**
 
 Category
 
@@ -27,7 +29,8 @@ Indintifies which activity was being completed during the experiment
 6. Laying
 
 
-*Mean of Feature Measurements*
+
+**Mean of Feature Measurements**
 
 Result
 
