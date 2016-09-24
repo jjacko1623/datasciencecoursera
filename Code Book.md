@@ -1,8 +1,7 @@
 # Code book
 ## Final Assignment for Getting and Cleaning Data
 
-### This file describes the variables in the final table produce from Step 5 of the assignment
-
+### This file describes the variables in the final table (titled meansDataTable) produce from Step 5 of the assignment
 
 
 **Subject ID**
@@ -14,12 +13,11 @@ Serial Number
 Identifies which subject was undetaking the experiment
 
 
-
 **Activity Descriptions**
 
 Category
 
-Indintifies which activity was being completed during the experiment
+Indintifies which activity was being completed during the experiment by the subject
 
 1. Walking
 2. Walking Upstairs
@@ -29,11 +27,10 @@ Indintifies which activity was being completed during the experiment
 6. Laying
 
 
-
 **Mean of Feature Measurements**
 
 Result
 
-Mean of all feature measruments that measured a mean of standard deviation
+Mean of all feature measurements that resulted in a mean or standard deviation calculation from the raw data measurements
 
-Normailsed from -1 to 1
+Normalised values from -1 to 1 i.e. no units
