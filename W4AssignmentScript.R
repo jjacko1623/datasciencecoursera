@@ -65,8 +65,8 @@ names(XTrain) <- FeaturesDescriptions
 
 
 ## cbind & rbind as shown in picture
-## rbind subjects, activites and feautre measurements
-## cbind subjects, activites and feautre measurements
+## rbind subjects, activites and feautre measurements individually
+## cbind subjects, activites and feautre measurements together
 
 #### cbind activites, subjects and feature measurements
 #### rbind headings, train data and test data
@@ -78,7 +78,7 @@ rFeature <- rbind(XTrain,XTest)
 mergedData <- cbind(rSubject,rActivity,rFeature)
 
 
-
+#Step 2
 #get column names that have term "mean" & "sd" in them
 meancolindex <- grep("mean",FeaturesDescriptions)
 stdcolindex <- grep("std",FeaturesDescriptions)
@@ -109,3 +109,27 @@ for (i in 1:nrow(filterMergedData)) {
     filterMergedData[i,2] <- "Laying" #ActivityDescriptions[6]
   }
 }
+
+##Steps 1-3 are now complete
+#given col 2 is no longer activity ID let's change the variable name
+names(filterMergedData)[names(filterMergedData) == "Activity ID"] <- "Activity Desciptions"
+
+##Steps 1-4 are now complete
+##make new table for Step 5
+
+##assume this means taking row means of feautre measurements data for each row i.e subject and activity
+
+#strip out first two columns to take average, then bind
+stripData <- filterMergedData[3:ncol(filterMergedData)]
+
+#create vector of means of columns in stripped data, need to transpose it to a col vec
+meansData <- rowMeans(stripData)
+#setnames(meansData,"Mean Data")
+#names(meansData)[names(meansData) == "meansData"] <- "Mean Data"
+#names(meansData) <- "Mean Data"
+
+#bind meansData to subject and activities
+meansDataTable <- cbind(rSubject,filterMergedData[2],meansData)
+
+#tidy names in last column
+names(meansDataTable)[names(meansDataTable) == "meansData"] <- "Mean of Feature Measurements"
