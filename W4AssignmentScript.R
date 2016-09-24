@@ -11,15 +11,15 @@ setwd("C:/Users/Sophy/Desktop/JJ Coursera/GitHubRepo")
 ######################################################
 
 #Read in once, then can comment out when rerunning :)
-#ActLab <- read.table("./UCI HAR Dataset/activity_labels.txt",header = F)
+ActLab <- read.table("./UCI HAR Dataset/activity_labels.txt",header = F)
 
-#SubjectsTest <- read.table("./UCI HAR Dataset/test/subject_test.txt",header = F)
-#XTest <- read.table("./UCI HAR Dataset/test/X_test.txt",header = F)
-#yTest <- read.table("./UCI HAR Dataset/test/y_test.txt",header = F)
+SubjectsTest <- read.table("./UCI HAR Dataset/test/subject_test.txt",header = F)
+XTest <- read.table("./UCI HAR Dataset/test/X_test.txt",header = F)
+yTest <- read.table("./UCI HAR Dataset/test/y_test.txt",header = F)
 
-#SubjectsTrain <- read.table("./UCI HAR Dataset/train/subject_train.txt",header = F)
-#XTrain <- read.table("./UCI HAR Dataset/train/X_train.txt",header = F)
-#yTrain <- read.table("./UCI HAR Dataset/train/y_train.txt",header = F)
+SubjectsTrain <- read.table("./UCI HAR Dataset/train/subject_train.txt",header = F)
+XTrain <- read.table("./UCI HAR Dataset/train/X_train.txt",header = F)
+yTrain <- read.table("./UCI HAR Dataset/train/y_train.txt",header = F)
 
 #BodyAccXTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/body_acc_x_test.txt",header = F)
 #BodyAccYTest <- read.table("./UCI HAR Dataset/test/Inertial Signals/body_acc_y_test.txt",header = F)
@@ -41,7 +41,7 @@ setwd("C:/Users/Sophy/Desktop/JJ Coursera/GitHubRepo")
 #TotAccYTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_y_train.txt",header = F)
 #TotAccZTrain <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_z_train.txt",header = F)
 
-#FeaturesData <- read.table("./UCI HAR Dataset/features.txt",header = F)
+FeaturesData <- read.table("./UCI HAR Dataset/features.txt",header = F)
 
 #Trim erroneous column from data read in
 ActivityDescriptions <- ActLab[,2]
