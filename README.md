@@ -45,4 +45,8 @@ Note: Steps 1-4 are now complete
 
 108: rename the variable in the final column to be descriptive
 
-Note: sense checks were performed on output data for reasonablenss
+*Notes:* 
+
+Final data is not ordered by Subject ID, but this is not a requirement of tidy data
+
+Sense checks were performed on output data for reasonablenss
