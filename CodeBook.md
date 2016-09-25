@@ -39,17 +39,17 @@ Normalised values from -1 to 1 i.e. no units
 The following steps were completed to tidy the data created in Step 4
 
 1. Assign appropriate headings to raw data
-... by reading in heading labels then assigning names to the raw data
+ * by reading in heading labels then assigning names to the raw data
 2. Extract only relevant columns from the large merged data table
-... by scanning data from headings that related to the mean and standard deviation
-... a new data table was built with no extraneous columns involved
+ * by scanning data from headings that related to the mean and standard deviation
+ * a new data table was built with no extraneous columns involved
 3. The new data frame was altered to explicitly state which activity was being completed
-... the corresponding activities column names was updated to reflect the changes
+ * the corresponding activities column names was updated to reflect the changes
 4. This completed the cleaning of data table required at Step 4 because:
-... Each variable is in a separate column
-... Each measurement is in a different row
-... Variables are named acurately and in a readable form
-... In addition, the data passed a reasonablness check to confirm values seemed appropriate and there were no NA values
+ * Each variable is in a separate column
+ * Each measurement is in a different row
+ * Variables are named acurately and in a readable form
+ * In addition, the data passed a reasonablness check to confirm values seemed appropriate and there were no NA values
 
 The following steps were completed to tidy the data created in Step 5
 
@@ -57,7 +57,7 @@ The following steps were completed to tidy the data created in Step 5
 2. Bind this information to the Subjects and Activities columns
 3. Rename the means data column to provide a meaningful description
 4. This completed the cleaning of data table required at Step 4 because:
-... Each variable is in a separate column
-... Each measurement is in a different row
-... Variables are named acurately and in a readable form
-... In addition, the data passed a reasonablness check to confirm values seemed appropriate and there were no NA values
+ * Each variable is in a separate column
+ * Each measurement is in a different row
+ * Variables are named acurately and in a readable form
+ * In addition, the data passed a reasonablness check to confirm values seemed appropriate and there were no NA values
