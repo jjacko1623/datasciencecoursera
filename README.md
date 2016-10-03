@@ -44,3 +44,5 @@ Note: the data table matches the structure outlined in the picture in the repo t
 Final data is not ordered by Subject ID, but this is not a requirement of tidy data
 
 Sense checks were performed on output data for reasonablenss e.g. no NA values are in the data set
+
+The data table includes column headings such as "meanFreq..." as per my interpretation of the question
