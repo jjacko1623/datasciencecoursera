@@ -90,19 +90,10 @@ for (i in 1:nrow(filterMergedData)) {
 #given col 2 is no longer activity ID let's change the variable name
 names(filterMergedData)[names(filterMergedData) == "Activity ID"] <- "Activity Desciption"
 
-##Steps 1-4 are now complete
-##make new table for Step 5
 
-##assume this means taking row means of feautre measurements data for each row i.e subject and activity
+#order table by Subject ID
+sortFilterMergedData <- filterMergedData[order(filterMergedData$`Subject ID`),]
 
-#strip out first two columns to take average, then bind
-stripData <- filterMergedData[3:ncol(filterMergedData)]
 
-#create vector of means of columns in stripped data, need to transpose it to a col vec
-meansData <- rowMeans(stripData)
-
-#bind meansData to subject and activities
-meansDataTable <- cbind(rSubject,filterMergedData[2],meansData)
-
-#tidy names in last column
-names(meansDataTable)[names(meansDataTable) == "meansData"] <- "Mean of Feature Measurements"
+#write final table as text file
+write.table(sortFilterMergedData,"./Step5Data.txt",row.names=F,col.names=T)

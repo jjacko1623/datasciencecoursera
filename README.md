@@ -35,18 +35,12 @@ Note: the data table matches the structure outlined in the picture in the repo t
 
 91: rename heading of activities column to reference description not ID
 
-Note: Steps 1-4 are now complete
+95: sort the table previously made by Subject ID, for tidyness
 
-99: build data consisting of non-subject and non-activity columns
-
-102: take row means of feature measurements
-
-105: rebuild data table to consist of 3 columns: Subject ID, Activity descriptions and newly calculated means
-
-108: rename the variable in the final column to be descriptive
+99: write the data table created to a text file in the folder set by the working directory
 
 *Notes:* 
 
 Final data is not ordered by Subject ID, but this is not a requirement of tidy data
 
-Sense checks were performed on output data for reasonablenss
+Sense checks were performed on output data for reasonablenss e.g. no NA values are in the data set
